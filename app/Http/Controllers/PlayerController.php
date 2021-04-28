@@ -7,7 +7,7 @@ use App\Models\Player;
 
 class PlayerController extends Controller
 {
-    public function index(Request $request){
+    public function index(){
         $player = Player::all();
         return $player;
     }
@@ -36,5 +36,10 @@ class PlayerController extends Controller
     public function delete(Request $request){
         $player = Player::findOrFail($request->id);
         $player->delete();
+    }
+
+    public function search(Request $request,int $id){
+        $player = Player::first($id);
+        return ['data'=>$player];
     }
 }

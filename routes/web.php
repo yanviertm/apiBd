@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlayerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/players','PlayerController@index');
-Route::post('/players/new','PlayerController@create')->name('player.create');
-Route::put('/players/update','PlayerController@update')->name('player.update');
-Route::put('/players/delete','PlayerController@delete')->name('player.delete');
+
